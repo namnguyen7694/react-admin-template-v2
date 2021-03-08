@@ -1,0 +1,253 @@
+.custom-item-card {
+  border-radius: 3px;
+  margin-bottom: 0;
+  &:hover {
+    box-shadow: $boxShadowCard;
+    cursor: pointer;
+    z-index: 10;
+  }
+  .ant-card-body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.4rem;
+    width: 100%;
+    height: 6rem;
+    .ant-card-meta-avatar {
+      padding-right: 3.2rem;
+    }
+    .ant-card-meta-detail {
+      width: 100%;
+    }
+    > a,
+    > div {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+  &--meta {
+    width: 30rem;
+    align-items: center;
+    display: flex;
+    .ant-avatar.ant-avatar-icon {
+      height: 4rem;
+      width: 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .ant-avatar-image {
+      height: 4rem;
+      width: 4rem;
+      object-fit: cover;
+    }
+    .ant-card-meta-title {
+      color: #2d3742;
+      font-size: 1.6rem;
+    }
+    .ant-card-meta-description {
+      font-size: 1.6rem;
+    }
+  }
+  &--info {
+    width: 10%;
+    display: flex;
+    &.w-5 {
+      width: 5%;
+    }
+    &.w-15 {
+      width: 15%;
+    }
+    &.w-20 {
+      width: 20%;
+    }
+    &.w-25 {
+      width: 25%;
+    }
+    &.w-30 {
+      width: 30%;
+    }
+    .ant-card-meta-title {
+      font-size: 1.4rem;
+      line-height: 156%;
+      color: #7d8596;
+      font-weight: normal;
+    }
+    &.customer-card-status {
+      border-radius: 20px;
+      padding: 5px;
+      &.verified {
+        color: #0a65ff;
+        background: #e9efff;
+      }
+      &.deleted,
+      &.not_verified {
+        color: #86898c;
+        background: #ebebec;
+      }
+      &.problem {
+        color: #ffaa2c;
+        background: #fff9f1;
+      }
+      &.reported {
+        color: #ff2f48;
+        background: #ffeeef;
+      }
+      .ant-card-meta-title {
+        text-align: center;
+        background-color: inherit;
+        color: inherit;
+        text-transform: capitalize;
+      }
+    }
+    &.ticket-card-status {
+      border-radius: 20px;
+      padding: 5px;
+      &.unassigned {
+        color: #ffaa2c;
+        background-color: #fff9f1;
+      }
+      &.assigned {
+        color: #0a65ff;
+        background-color: #e9efff;
+      }
+      &.supporting {
+        color: #05cb58;
+        background-color: #eaf9f0;
+      }
+      &.done {
+        color: #86898c;
+        background-color: #ebebec;
+      }
+      &.failed {
+        color: #ff2f48;
+        background-color: #ffeeef;
+      }
+      .ant-card-meta-title {
+        text-align: center;
+        background-color: inherit;
+        color: inherit;
+        text-transform: capitalize;
+      }
+    }
+    &.plan-card-status {
+      border-radius: 20px;
+      padding: 5px;
+      &.inactive {
+        color: #ffaa2c;
+        background-color: #fff9f1;
+      }
+      &.active {
+        color: #0a65ff;
+        background-color: #e9efff;
+      }
+      .ant-card-meta-title {
+        text-align: center;
+        background-color: inherit;
+        color: inherit;
+        text-transform: capitalize;
+      }
+    }
+    &.active-sim-card-status {
+      border-radius: 20px;
+      padding: 5px;
+      &.expired {
+        color: #ffaa2c;
+        background-color: #fff9f1;
+      }
+      &.activated {
+        color: #0a65ff;
+        background-color: #e9efff;
+      }
+      .ant-card-meta-title {
+        text-align: center;
+        background-color: inherit;
+        color: inherit;
+        text-transform: capitalize;
+      }
+    }
+    &.sim-card-status {
+      border-radius: 20px;
+      padding: 5px;
+      &.not_sale {
+        color: #86898c;
+        background-color: #ebebec;
+      }
+      &.in_active {
+        color: #0a65ff;
+        background-color: #e9efff;
+      }
+      &.activation_request {
+        color: #ffaa2c;
+        background-color: #fff9f1;
+      }
+      &.activation_success {
+        color: #05cb58;
+        background-color: #eaf9f0;
+      }
+      &.activation_fail {
+        color: #ff2f48;
+        background-color: #ffeeef;
+      }
+      .ant-card-meta-title {
+        text-align: center;
+        background-color: inherit;
+        color: inherit;
+        text-transform: capitalize;
+      }
+    }
+    &.order-card-status {
+      border-radius: 20px;
+      padding: 5px;
+      &.success {
+        color: #05cb58;
+        background-color: #eaf9f0;
+      }
+      &.pending {
+        color: #ffaa2c;
+        background-color: #fff9f1;
+      }
+      &.paid {
+        color: #0a65ff;
+        background-color: #e9efff;
+      }
+      &.failed {
+        color: #ff2f48;
+        background-color: #ffeeef;
+      }
+      .ant-card-meta-title {
+        text-align: center;
+        background-color: inherit;
+        color: inherit;
+        text-transform: capitalize;
+      }
+    }
+    &.button-base-light {
+      align-items: center;
+      span {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.custom-list-heading {
+  display: flex;
+  height: 6.4rem;
+  background-color: $appBaseLight;
+  align-items: center;
+  padding: 2.4rem;
+  border-radius: 6px 6px 0 0;
+  > div {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    > div {
+      color: #ffffff;
+      font-size: 1.8rem;
+      width: 10%;
+    }
+  }
+}

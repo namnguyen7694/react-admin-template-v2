@@ -1,0 +1,117 @@
+.customer-list,
+.ticket-list {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 2rem;
+  &__toolbar {
+    padding: 3rem 0 0;
+    width: 100%;
+    height: auto;
+    transition: all 0.2s;
+    .ant-input-affix-wrapper-focused,
+    .ant-input-affix-wrapper:hover {
+      border-color: white;
+    }
+
+    &-control {
+      display: flex;
+      margin-bottom: 1.6rem;
+      justify-content: space-between;
+
+      .ant-input-affix-wrapper {
+        width: auto;
+        min-width: 30rem;
+        -webkit-box-shadow: $boxShadowButton;
+        -moz-box-shadow: $boxShadowButton;
+        box-shadow: $boxShadowButton;
+        border-radius: 4px;
+        margin-left: 2rem;
+        border: none;
+        height: 4rem;
+        margin-right: 2rem;
+      }
+      .filter_group {
+        margin-left: auto;
+        margin-bottom: 0 !important;
+        justify-content: flex-end !important;
+        flex-wrap: wrap;
+        .ant-dropdown-trigger.filter-trigger {
+          -webkit-box-shadow: $boxShadowButton;
+          -moz-box-shadow: $boxShadowButton;
+          box-shadow: $boxShadowButton;
+          border-radius: 4px;
+          color: #8e9aa7;
+          justify-content: flex-start;
+          padding: 0 6px;
+          margin-left: 6px;
+          margin-bottom: 6px;
+          > div:first-of-type {
+            margin-left: 6px;
+            color: #333638;
+            max-width: 9rem;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+          }
+          .ant-dropdown-menu-item {
+            height: 4rem;
+            align-items: center;
+            display: flex;
+            padding: 0 1rem;
+            &.selected {
+              font-weight: bold;
+              background-color: #edeff1;
+            }
+          }
+          .ant-dropdown-menu-item:not(:last-child) {
+            border-bottom: 1px solid #d8dde2;
+          }
+        }
+      }
+    }
+    &-options,
+    .filter_group {
+      margin-bottom: 1.6rem;
+      display: flex;
+      justify-content: space-between;
+      .ant-dropdown-trigger {
+        cursor: pointer;
+        background-color: #ffffff;
+        height: 4rem;
+        width: 20rem;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        border-radius: 6px;
+        text-align: center;
+        font-size: 1.6rem;
+        .ant-dropdown-menu-item {
+          padding: 0.6rem;
+          text-align: center;
+          font-size: 1.4rem;
+          color: #5e6266;
+        }
+      }
+    }
+  }
+  &__list {
+    transition: ease-in-out 0.2s;
+    display: flex;
+    height: calc(100vh - 29rem);
+    flex-direction: column;
+    width: 100%;
+    overflow-y: auto;
+  }
+  .ant-spin-nested-loading {
+    width: 100%;
+    height: 100vh;
+  }
+  &-null {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: calc(100vh - 22rem);
+  }
+}

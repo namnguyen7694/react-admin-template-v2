@@ -1,0 +1,6 @@
+- normal folder & file : camelCase
+- Component: Folder, File, Name --> Pascal Case (*.tsx, *.scss)
+- class name : Pascal Case
+- class model field : snake_case (match back-end output)
+- action, service, variable, function... : camelCase
+- image : snake_case (ic_*  if icon type)

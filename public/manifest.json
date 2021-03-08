@@ -1,0 +1,16 @@
+{
+  "short_name": "BookOke",
+  "name": "BookOke",
+  "icons": [
+    {
+      "src": "bookoke-logo.png",
+      "type": "image/png"
+    },
+    {
+      "src": "bookoke-logo.png",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone"
+}

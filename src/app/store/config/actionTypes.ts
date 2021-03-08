@@ -1,0 +1,22 @@
+export enum ActionType {
+  GET_CUSTOMERS_REQUEST = "action/GET_CUSTOMERS_REQUEST",
+  GET_CUSTOMERS_SUCCESS = "action/GET_CUSTOMERS_SUCCESS",
+  GET_CUSTOMERS_ERROR = "action/GET_CUSTOMERS_ERROR",
+
+  LOGIN_REQUEST = "action/LOGIN_REQUEST",
+  LOGIN_SUCCESS = "action/LOGIN_SUCCESS",
+  LOGIN_ERROR = "action/LOGIN_ERROR",
+
+  LOGOUT_REQUEST = "action/LOGOUT_REQUEST",
+  LOGOUT_SUCCESS = "action/LOGOUT_SUCCESS",
+  LOGOUT_ERROR = "action/LOGOUT_ERROR",
+
+  LOAD_AUTH_REQUEST = "action/LOAD_AUTH_REQUEST",
+  LOAD_AUTH_SUCCESS = "action/LOAD_AUTH_SUCCESS",
+  LOAD_AUTH_ERROR = "action/LOAD_AUTH_ERROR",
+}
+
+export interface pureAction<T> {
+  type: ActionType;
+  payload: T;
+}

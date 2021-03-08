@@ -1,0 +1,51 @@
+/*Notice Message*/
+.ant-message-notice {
+  .ant-message-notice-content {
+    color: #fff;
+    font-size: 1.6rem;
+    padding: 0;
+    box-shadow: 0px 20px 30px rgba(146, 151, 163, 0.2);
+    border-radius: 0.6rem;
+    .anticon {
+      svg {
+        border: 1px solid #fff;
+        border-radius: 50%;
+        background-color: #fff;
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+    .ant-message-error {
+      padding: 1.6rem;
+      background-color: #f84948;
+      border-radius: 0.6rem;
+      &.anticon {
+        color: #f84948 !important;
+      }
+    }
+    .ant-message-success {
+      padding: 1.6rem;
+      background-color: $greenBaseLight4;
+      border-radius: 0.6rem;
+      .anticon {
+        color: $greenBaseLight4;
+      }
+    }
+    .ant-message-info {
+      padding: 2rem 4rem;
+      background-color: #2b94f8;
+      border-radius: 0.6rem;
+      &.anticon {
+        color: #2b94f8;
+      }
+    }
+    .ant-message-warning {
+      padding: 2rem 4rem;
+      background-color: #f7ab2f;
+      border-radius: 0.6rem;
+      &.anticon {
+        color: #f7ab2f;
+      }
+    }
+  }
+}

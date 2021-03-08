@@ -1,0 +1,552 @@
+/*Text Input (with-Close Icon)*/
+.input {
+  &__text {
+    &-lg.ant-input-affix-wrapper,
+    &-lg.ant-input-number {
+      //Large
+      height: 5.6rem;
+      width: 100%;
+      border-color: #aeb8c7;
+      border-radius: 4px;
+      align-items: center; // center phần từ prefix và suffix của input
+      &:hover {
+        border-color: $grayBaseDark2;
+      }
+      &-focused {
+        border-color: $appBase;
+        box-shadow: $boxShadowInput;
+        &:hover {
+          border-color: $appBase;
+        }
+      }
+      .ant-input,
+      .ant-input-number-input {
+        font-size: 1.8rem;
+        line-height: 156%;
+        color: $grayBaseDark2;
+      }
+      .ant-input-number-input-wrap {
+        height: 100%;
+        .ant-input-number-input {
+          height: 100%;
+        }
+      }
+      .ant-input-clear-icon {
+        margin: 1.5rem 0.5rem;
+      }
+    }
+
+    &-md.ant-input-affix-wrapper,
+    &-md.ant-input-number {
+      //Medium
+      height: 4.8rem;
+      width: 100%;
+      border-color: #aeb8c7;
+      border-radius: 4px;
+      align-items: center; // center phần từ prefix và suffix của input
+      &:hover {
+        border-color: $grayBaseDark2;
+      }
+      &-focused {
+        border-color: $appBase;
+        box-shadow: $boxShadowInput;
+        &:hover {
+          border-color: $appBase;
+        }
+      }
+      .ant-input,
+      .ant-input-number-input {
+        font-size: 1.6rem;
+        line-height: 152%;
+        color: $grayBaseDark2;
+      }
+
+      .ant-input-number-input-wrap {
+        height: 100%;
+        .ant-input-number-input {
+          height: 100%;
+        }
+      }
+
+      .ant-input-disabled {
+        color: #aeb8c7;
+      }
+      .ant-input-clear-icon {
+        margin: 1.2rem 0.5rem;
+        font-size: 1.4rem;
+        color: $grayBaseDark2;
+      }
+    }
+
+    &-sm.ant-input-affix-wrapper,
+    &-sm.ant-input-number {
+      //Small
+      height: 3.6rem;
+      width: 100%;
+      border-color: #aeb8c7;
+      border-radius: 4px;
+      align-items: center; // center phần từ prefix và suffix của input
+      &:hover {
+        border-color: $grayBaseDark2;
+      }
+      &-focused {
+        border-color: $appBase;
+        box-shadow: $boxShadowInput;
+        &:hover {
+          border-color: $appBase;
+        }
+      }
+      .ant-input,
+      .ant-input-number-input {
+        font-size: 1.4rem;
+        line-height: 144%;
+        color: $grayBaseDark2;
+      }
+      .ant-input-number-input-wrap {
+        height: 100%;
+        .ant-input-number-input {
+          height: 100%;
+        }
+      }
+      .ant-input-clear-icon {
+        margin: 0.6rem 0.2rem;
+      }
+      .ant-input-suffix {
+        line-height: 2.6rem;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}
+
+/* text input has error */
+.ant-form-item-has-error {
+  .input {
+    &__text {
+      &-lg.ant-input-affix-wrapper {
+        //Large
+        height: 5.6rem;
+        border-radius: 4px;
+        &:hover {
+          border-color: #ff4d4f;
+        }
+        &-focused {
+          border-color: #ff4d4f;
+          box-shadow: none;
+          &:hover {
+            border-color: #ff4d4f;
+          }
+        }
+        & > .ant-input-prefix,
+        .ant-input-suffix {
+          color: #ff4d4f;
+        }
+      }
+      &-md.ant-input-affix-wrapper {
+        //Medium
+        height: 4.8rem;
+        border-radius: 4px;
+        background: rgba(254, 219, 218, 0.28);
+        & > .ant-input {
+          background-color: transparent;
+        }
+        &:hover {
+          border-color: #ff4d4f;
+        }
+        &-focused {
+          border-color: #ff4d4f;
+          box-shadow: none;
+          &:hover {
+            border-color: #ff4d4f;
+          }
+        }
+        & > .ant-input-prefix,
+        .ant-input-suffix {
+          color: #ff4d4f;
+        }
+      }
+      &-sm.ant-input-affix-wrapper {
+        //Small
+        height: 3.6rem;
+        border-radius: 4px;
+        &:hover {
+          border-color: #ff4d4f;
+        }
+        &-focused {
+          border-color: #ff4d4f;
+          box-shadow: none;
+          &:hover {
+            border-color: #ff4d4f;
+          }
+        }
+        & > .ant-input-prefix,
+        .ant-input-suffix {
+          color: #ff4d4f;
+        }
+      }
+    }
+  }
+}
+
+/*Text Input (non-Close Icon)*/
+.ant-input.input {
+  &__text {
+    &-lg {
+      //Large
+      font-size: 1.8rem;
+      line-height: 156%;
+      height: 5.6rem;
+      border-color: #aeb8c7;
+      border-radius: 4px;
+      &:hover {
+        border-color: $grayBaseDark2;
+      }
+      &:focus {
+        border-color: $appBase;
+        box-shadow: $boxShadowInput;
+      }
+    }
+    &-md {
+      //Medium
+      font-size: 1.6rem;
+      line-height: 152%;
+      height: 4.8rem;
+      border-color: #aeb8c7;
+      border-radius: 4px;
+      &:hover {
+        border-color: $grayBaseDark2;
+      }
+      &:focus {
+        border-color: $appBase;
+        box-shadow: $boxShadowInput;
+      }
+    }
+    &-sm {
+      //Small
+      font-size: 1.4rem;
+      line-height: 144%;
+      height: 3.6rem;
+      border-color: #aeb8c7;
+      border-radius: 4px;
+      &:hover {
+        border-color: $grayBaseDark2;
+      }
+      &:focus {
+        border-color: $appBase;
+        box-shadow: $boxShadowInput;
+      }
+    }
+  }
+  /*Text Input (non-Close Icon)*/
+}
+
+/*Text Input disabled*/
+.input__text-sm.ant-input-affix-wrapper.ant-input-affix-wrapper-disabled,
+.input__text-md.ant-input-affix-wrapper.ant-input-affix-wrapper-disabled,
+.input__text-lg.ant-input-affix-wrapper.ant-input-affix-wrapper-disabled {
+  background-color: #fafbfd;
+  border: 1px solid #d5dceb;
+  .ant-input.ant-input-disabled {
+    background-color: #fafbfd;
+  }
+}
+
+/*Text Input suffix*/
+.ant-input-suffix {
+  margin-left: 4px;
+  display: flex;
+  align-items: center;
+}
+/*Text Input suffix*/
+
+/* Selector Input */
+.ant-select.input {
+  &__select {
+    /*Large*/
+    &-lg {
+      .ant-select-selector {
+        border: 1px solid #aeb8c7;
+        height: 5.6rem;
+        border-radius: 4px;
+        align-items: center;
+        font-size: 1.8rem;
+        color: $grayBaseDark2;
+        .ant-select-selection-search-input {
+          height: 5.6rem;
+        }
+      }
+      &:hover {
+        .ant-select-selector {
+          border-color: $grayBaseDark2;
+        }
+      }
+      .anticon-close > svg {
+        color: #536380;
+        width: 1.2rem;
+        height: 1.2rem;
+      }
+    }
+    /*Large*/
+
+    /*Medium*/
+    &-md {
+      .ant-select-selector {
+        border: 1px solid #aeb8c7;
+        min-height: 4.8rem;
+        border-radius: 4px;
+        align-items: center;
+        font-size: 1.6rem;
+        color: $grayBaseDark2;
+        .ant-select-selection-search-input {
+          min-height: 4.8rem;
+        }
+      }
+      &:hover {
+        .ant-select-selector {
+          border-color: $grayBaseDark2;
+        }
+      }
+      .anticon-close > svg {
+        color: #536380;
+        width: 1.2rem;
+        height: 1.2rem;
+      }
+    }
+    /*Medium*/
+
+    /*Small*/
+    &-sm {
+      .ant-select-selector {
+        border: 1px solid #aeb8c7;
+        height: 3.6rem;
+        border-radius: 4px;
+        align-items: center;
+        font-size: 1.4rem;
+        color: $grayBaseDark2;
+        .ant-select-selection-search-input {
+          height: 3.6rem;
+        }
+      }
+      &:hover {
+        .ant-select-selector {
+          border-color: $grayBaseDark2;
+        }
+      }
+      .anticon-close > svg {
+        color: #536380;
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+  }
+  /*Small*/
+}
+
+// .ant-select-single .ant-select-selector .ant-select-selection-item,
+// .ant-select-single .ant-select-selector .ant-select-selection-placeholder {
+//   text-transform: capitalize;
+// }
+
+/* Select Disabled*/
+.input__select-sm.ant-select-disabled.ant-select-single:not(.ant-select-customize-input),
+.input__select-md.ant-select-disabled.ant-select-single:not(.ant-select-customize-input),
+.input__select-lg.ant-select-disabled.ant-select-single:not(.ant-select-customize-input) {
+  .ant-select-selector {
+    background-color: #fafbfd;
+    border: 1px solid #d5dceb;
+  }
+}
+
+.ant-select-focused.ant-select.input__select-md,
+.ant-select-focused.ant-select.input__select-lg,
+.ant-select-focused.ant-select.input__select-sm {
+  .ant-select-selector {
+    border-color: $appBase;
+    box-shadow: $boxShadowInput;
+  }
+}
+
+.ant-select-item-option.input__select-option-lg {
+  // Option large
+  align-items: center;
+  font-size: 1.8rem;
+  height: 5.6rem;
+}
+.ant-select-item-option {
+  //defaul Option Medium
+  align-items: center;
+  font-size: 1.6rem;
+  height: 4.8rem;
+  // text-transform: capitalize;
+}
+.ant-select-item-option.input__select-option-sm {
+  // Option small
+  align-items: center;
+  font-size: 1.4rem;
+  height: 3.6rem;
+}
+
+.ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+  background-color: #f3f5f9;
+}
+
+/*Multiple Option*/
+.input__select-lg.ant-select-multiple .ant-select-selection-item {
+  align-items: center;
+  height: 4.5rem;
+  font-weight: bold;
+  border-radius: 2rem;
+  padding: 0 1.5rem;
+}
+.input__select-md.ant-select-multiple .ant-select-selection-item {
+  align-items: center;
+  height: 3.6rem;
+  font-weight: bold;
+  border-radius: 2rem;
+  padding: 0 1.5rem;
+}
+.input__select-sm.ant-select-multiple .ant-select-selection-item {
+  align-items: center;
+  height: 2.4rem;
+  font-weight: bold;
+  border-radius: 2rem;
+  padding: 0 1.5rem;
+}
+/*Multiple Option*/
+
+.ant-select-disabled.ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+  background: #f3f5f9;
+}
+/* Selector Input*/
+
+/* Input Picker */
+.ant-picker.input {
+  &__picker {
+    &-lg {
+      border: 1px solid #aeb8c7;
+      height: 5.6rem;
+      input {
+        font-size: 1.8rem;
+        color: $grayBaseDark2;
+      }
+      border-radius: 4px;
+      width: 100%;
+      &:hover {
+        border-color: $grayBaseDark2;
+      }
+    }
+    &-md {
+      border: 1px solid #aeb8c7;
+      height: 4.8rem;
+      border-radius: 4px;
+      width: 100%;
+      &:hover {
+        border-color: $grayBaseDark2;
+      }
+      input {
+        font-size: 1.6rem;
+        color: $grayBaseDark2;
+      }
+    }
+    &-sm {
+      border: 1px solid #aeb8c7;
+      height: 3.6rem;
+      border-radius: 4px;
+      width: 100%;
+      input {
+        font-size: 1.4rem;
+        color: $grayBaseDark2;
+      }
+      &:hover {
+        border-color: $grayBaseDark2;
+      }
+    }
+  }
+}
+.ant-picker-focused.input__picker-md,
+.ant-picker-focused.input__picker-lg,
+.ant-picker-focused.input__picker-sm {
+  box-shadow: $boxShadowInput;
+  border-color: $appBase;
+  &:hover {
+    border-color: $appBase;
+  }
+}
+/* Input Picker*/
+
+/* Input Color Picker*/
+.input__colorPicker {
+  margin-left: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  width: 6.4rem;
+  height: 3.6rem;
+  border: 1px solid #aeb8c7;
+  border-radius: 4px;
+  &:hover {
+    border-color: $appBase;
+  }
+  &-defaulttags {
+    border: 1px solid #d5dceb;
+    background-color: #fff;
+    width: 9rem;
+    padding: 1rem;
+    height: fit-content;
+    border-radius: 4px;
+    + div {
+      height: 100%;
+      border-radius: 4px;
+      padding: 1rem;
+      background-color: white;
+      border: 1px solid #d5dceb;
+      margin-left: 1rem;
+      .chrome-picker {
+        box-shadow: none !important;
+      }
+    }
+  }
+  &-tag {
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 14px;
+  }
+}
+/* Input Color Picker*/
+
+/* Input Upload*/
+.ant-upload-list-picture-card .ant-upload-list-item {
+  float: left;
+  width: 9.2rem;
+  height: 9.2rem;
+  margin: 0;
+  padding: 0;
+}
+.ant-upload.ant-upload-select-picture-card {
+  height: 4.8rem;
+  width: 4.8rem;
+}
+/* Input Upload*/
+
+/*dropdown menu*/
+.dropdown-select-guide {
+  color: #525560;
+  font-size: 1.4rem;
+  margin: 2rem;
+}
+.dropdown-select-create-option {
+  color: #272b2f;
+  font-size: 1.6rem;
+  height: 7rem;
+  font-weight: 500;
+  padding: 2rem;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f3f8;
+  &-tag {
+    background-color: #f0f3f8;
+    padding: 1rem;
+    border-radius: 12px;
+  }
+}
+/*dropdown menu*/

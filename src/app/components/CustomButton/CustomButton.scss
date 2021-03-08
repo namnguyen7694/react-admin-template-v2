@@ -1,0 +1,253 @@
+
+/* btn */
+.btn {
+  width: auto;
+  height: 4rem;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  white-space: nowrap;
+  border-radius: $borderRadiusDefault;
+  touch-action: manipulation;
+  -webkit-appearance: button;
+  cursor: pointer;
+  transition: all 250ms ease 0ms;
+  font-size: 1.6rem;
+  & > * {
+    font-size: 1.6rem;
+    color: #fff;
+  }
+  &:active {
+    -webkit-box-shadow: 0rem 0rem 1.1rem 0.1rem gray;
+    -moz-box-shadow: 0rem 0rem 1.1rem 0.1rem gray;
+    box-shadow: 0rem 0rem 1.1rem 0.1rem gray;
+  }
+  &--hover:hover {
+    border: 1px solid $textColorDark;
+  }
+  &--transparent {
+    border: 1px solid transparent;
+    background-image: none;
+    background-color: transparent;
+    outline: none;
+    user-select: none;
+  }
+  &--shiny {
+    position: relative;
+    &:hover {
+      background-image: -webkit-gradient(linear, left top, right top, color-stop(33%, transparent), color-stop(50%, rgba(255, 255, 255, 0.3)), color-stop(66%, transparent));
+      background-image: -o-linear-gradient(left, transparent 33%, rgba(255, 255, 255, 0.3) 50%, transparent 66%);
+      background-image: linear-gradient(to right, transparent 33%, rgba(255, 255, 255, 0.3) 50%, transparent 66%);
+      background-size: 300% 100%;
+      -webkit-animation: shine 1s 1;
+      animation: shine 1s 1;
+    }
+  }
+  &--shadow {
+    -webkit-box-shadow: 0 0.4rem 1.6rem rgba(66, 78, 87, 0.16);
+    -moz-box-shadow: 0 0.4rem 1.6rem rgba(66, 78, 87, 0.16);
+    box-shadow: 0 0.4rem 1.6rem rgba(66, 78, 87, 0.16);
+  }
+  &--opacity {
+    opacity: 0.5;
+  }
+  &--disabled {
+    background-color: #ebecf0 !important;
+  }
+  &__circle {
+    width: 4.2rem;
+    height: 4.2rem;
+    border-radius: 50%;
+  }
+  &__square {
+    width: 4.2rem;
+  }
+
+  &__oval {
+    border-radius: 2.4rem;
+  }
+
+  &--new {
+    background-color: $appBase;
+  }
+
+  &--new-outline {
+    border: 1px solid $appBase;
+    background-color: #fff;
+  }
+
+  &--new-outline > * {
+    color: $appBase;
+  }
+
+  &--new-active:active {
+    -webkit-box-shadow: 0rem 0rem 1.1rem 0.1rem $appBase;
+    -moz-box-shadow: 0rem 0rem 1.1rem 0.1rem $appBase;
+    box-shadow: 0rem 0rem 1.1rem 0.1rem $appBase;
+  }
+  &--confirmed {
+    background-color: #ff5c00;
+    color: #fff;
+  }
+
+  &--confirmed-outline {
+    border: 1px solid #ff5c00;
+    background-color: #fff;
+  }
+
+  &--confirmed-outline > * {
+    color: #ff5c00;
+  }
+
+  &--confirmed-active:active {
+    -webkit-box-shadow: 0rem 0rem 1.1rem 0.1rem #ff5c00;
+    -moz-box-shadow: 0rem 0rem 1.1rem 0.1rem #ff5c00;
+    box-shadow: 0rem 0rem 1.1rem 0.1rem #ff5c00;
+  }
+  &--arrived {
+    background-color: #1db19d;
+    color: #fff;
+  }
+
+  &--arrived-outline {
+    border: 1px solid #1db19d;
+    background-color: #fff;
+  }
+
+  &--arrived-outline > * {
+    color: #1db19d;
+  }
+
+  &--arrived-active:active {
+    -webkit-box-shadow: 0rem 0rem 1.1rem 0.1rem #fabc1c;
+    -moz-box-shadow: 0rem 0rem 1.1rem 0.1rem #fabc1c;
+    box-shadow: 0rem 0rem 1.1rem 0.1rem #fabc1c;
+  }
+  &--inservice {
+    background-color: #3394c0;
+    color: #fff;
+  }
+
+  &--inservice-outline {
+    border: 1px solid #3394c0;
+    background-color: #fff;
+  }
+
+  &--inservice-outline > * {
+    color: #3394c0;
+  }
+
+  &--inservice-active:active {
+    -webkit-box-shadow: 0rem 0rem 1.1rem 0.1rem #03a9f4;
+    -moz-box-shadow: 0rem 0rem 1.1rem 0.1rem #03a9f4;
+    box-shadow: 0rem 0rem 1.1rem 0.1rem #03a9f4;
+  }
+  &--noshow {
+    background-color: #f84948;
+    color: #fff;
+  }
+
+  &--noshow-outline {
+    border: 1px solid #f84948;
+    background-color: #fff;
+  }
+
+  &--noshow-outline > * {
+    color: #f84948;
+  }
+
+  &--noshow-active:active {
+    -webkit-box-shadow: 0rem 0rem 1.1rem 0.1rem #f84948;
+    -moz-box-shadow: 0rem 0rem 1.1rem 0.1rem #f84948;
+    box-shadow: 0rem 0rem 1.1rem 0.1rem #f84948;
+  }
+  &--cancelled {
+    background-color: #f84948;
+    color: #fff;
+  }
+
+  &--cancelled-outline {
+    border: 1px solid #f84948;
+    background-color: #fff;
+  }
+
+  &--cancelled-outline > * {
+    color: #f84948;
+  }
+
+  &--cancelled-active:active {
+    -webkit-box-shadow: 0rem 0rem 1.1rem 0.1rem #f84948;
+    -moz-box-shadow: 0rem 0rem 1.1rem 0.1rem #f84948;
+    box-shadow: 0rem 0rem 1.1rem 0.1rem #f84948;
+  }
+  &--completed {
+    background-color: #000;
+    color: #fff;
+  }
+
+  &--completed-outline {
+    border: 1px solid #000;
+    background-color: #fff;
+  }
+
+  &--completed-outline > * {
+    color: #000;
+  }
+
+  &--completed-active:active {
+    -webkit-box-shadow: 0rem 0rem 1.1rem 0.1rem #000;
+    -moz-box-shadow: 0rem 0rem 1.1rem 0.1rem #000;
+    box-shadow: 0rem 0rem 1.1rem 0.1rem #000;
+  }
+  &--primary {
+    background-color: #fff;
+    color: #fff;
+  }
+
+  &--primary-outline {
+    border: 1px solid #fff;
+    background-color: #fff;
+  }
+
+  &--primary-outline > * {
+    color: #fff;
+  }
+
+  &--primary-active:active {
+    -webkit-box-shadow: 0rem 0rem 1.1rem 0.1rem #fff;
+    -moz-box-shadow: 0rem 0rem 1.1rem 0.1rem #fff;
+    box-shadow: 0rem 0rem 1.1rem 0.1rem #fff;
+  }
+  &--secondary {
+    background-color: $grayBase;
+    color: #fff;
+  }
+
+  &--secondary-outline {
+    border: 1px solid $grayBase;
+    background-color: #fff;
+  }
+
+  &--secondary-outline > * {
+    color: $grayBaseDark2;
+  }
+
+  &--secondary-active:active {
+    -webkit-box-shadow: 0rem 0rem 1.1rem 0.1rem $grayBase;
+    -moz-box-shadow: 0rem 0rem 1.1rem 0.1rem $grayBase;
+    box-shadow: 0rem 0rem 1.1rem 0.1rem $grayBase;
+  }
+  @-webkit-keyframes shine {
+    0% {
+      background-position: right;
+    }
+  }
+
+  @keyframes shine {
+    0% {
+      background-position: right;
+    }
+  }
+}

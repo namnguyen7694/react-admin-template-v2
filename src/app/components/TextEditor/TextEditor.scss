@@ -1,0 +1,164 @@
+.text-editor {
+  .button-group {
+    margin-left: auto;
+    width: 25rem;
+    display: flex;
+    height: 6rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+  }
+}
+
+/* Set content for font-families */
+.ql-font-Arial,
+.ql-font span[data-value="Arial"]::before {
+  font-family: Arial, sans-serif;
+}
+.ql-font-Comic-sans,
+.ql-font span[data-value="Comic-sans"]::before {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+.ql-font-Courier-new,
+.ql-font span[data-value="Courier-new"]::before {
+  font-family: "Courier New";
+}
+.ql-font-Georgia,
+.ql-font span[data-value="Georgia"]::before {
+  font-family: Georgia, serif;
+}
+.ql-font-Helvetica,
+.ql-font span[data-value="Helvetica"]::before {
+  font-family: Helvetica, sans-serif;
+}
+.ql-font-Lucida,
+.ql-font span[data-value="Lucida"]::before {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+.ql-font-Roboto,
+.ql-font span[data-value="Roboto"]::before {
+  font-family: "Roboto", sans-serif;
+}
+.ql-font-Vollkorn,
+.ql-font span[data-value="Vollkorn"]::before {
+  font-family: "Vollkorn", serif;
+}
+.ql-snow .ql-picker.ql-font .ql-picker-label::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item::before {
+  content: attr(data-value);
+}
+
+/*Font-size Option & format*/
+.ql-snow .ql-picker.ql-size .ql-picker-label::before,
+.ql-snow .ql-picker.ql-size .ql-picker-item::before {
+  content: attr(data-value);
+}
+
+.ql-size-8px,
+.ql-picker-item[data-value="8px"]::before {
+  font-size: 8px !important;
+}
+.ql-size-10px,
+.ql-picker-item[data-value="10px"]::before {
+  font-size: 10px !important;
+}
+.ql-size-12px,
+.ql-picker-item[data-value="12px"]::before {
+  font-size: 12px !important;
+}
+.ql-size-14px,
+.ql-picker-item[data-value="14px"]::before {
+  font-size: 14px !important;
+}
+.ql-size-16px,
+.ql-picker-item[data-value="16px"]::before {
+  font-size: 16px !important;
+}
+.ql-size-18px,
+.ql-picker-item[data-value="18px"]::before {
+  font-size: 18px !important;
+}
+.ql-size-20px,
+.ql-picker-item[data-value="20px"]::before {
+  font-size: 20px !important;
+}
+.ql-size-24px,
+.ql-picker-item[data-value="24px"]::before {
+  font-size: 24px !important;
+}
+.ql-size-30px,
+.ql-picker-item[data-value="30px"]::before {
+  font-size: 30px !important;
+}
+.ql-size-40px,
+.ql-picker-item[data-value="40px"]::before {
+  font-size: 40px !important;
+}
+
+.ql-snow .ql-picker.ql-align .ql-picker-label::before,
+.ql-snow .ql-picker.ql-align .ql-picker-item::before {
+  content: "";
+}
+.ql-editor .ql-align-center {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.ql-editor p {
+  margin: 6px 0;
+  line-height: 160%;
+
+  img {
+    margin: auto;
+    display: flex;
+    + em {
+      text-align: center;
+      width: 100%;
+      display: block;
+      margin-top: 6px;
+    }
+  }
+
+  // > br {
+  //   display: none;
+  // }
+}
+.ql-snow .ql-editor h1,
+.ql-snow .ql-editor h2 {
+  margin-top: 15px;
+  > br {
+    display: none;
+  }
+}
+
+.ql-editor ul li {
+  padding-left: 0;
+  &:not(:last-child) {
+    margin-bottom: 5px;
+  }
+  &::before {
+    font-size: 2rem;
+  }
+}
+.ql-editor ol li:not(.ql-direction-rtl),
+.ql-editor ul li:not(.ql-direction-rtl) {
+  padding-left: 0;
+}
+.ql-editor ol li:before {
+  content: "";
+}
+
+.ql-editor .ql-video {
+  margin: auto;
+  height: 30rem;
+  width: 50rem;
+  margin-bottom: 2rem;
+}
+.ql-container.ql-snow {
+  font-size: 1.6rem;
+  color: #4a4747;
+  font-family: "Roboto", sans-serif;
+  .ql-editor {
+    height: 70vh;
+  }
+}

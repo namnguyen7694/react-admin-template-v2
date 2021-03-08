@@ -1,0 +1,177 @@
+.layout {
+  &__sider {
+    height: auto;
+    position: relative;
+    left: 0;
+    z-index: 102;
+    &-trigger {
+      width: 6.4rem;
+      color: #aeb8c7;
+      font-size: 2.8rem;
+      line-height: 6.4rem;
+      cursor: pointer;
+      transition: color 0.3s;
+      height: 5rem;
+    }
+    &-logo {
+      display: flex;
+      align-items: flex-end;
+      flex-direction: column;
+      height: 20rem;
+      background-color: #465156;
+      width: 25rem;
+      transition: all 0.2s;
+      .anticon svg {
+        height: 3rem;
+        width: 2rem;
+      }
+      .ant-card-meta {
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        &-avatar {
+          padding-right: 0;
+          .ant-avatar {
+            height: 6rem;
+            width: 6rem;
+          }
+        }
+        .ant-card-meta-description,
+        .ant-card-meta-title {
+          color: #f4f5f7;
+          text-align: center;
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+
+  &__menu {
+    padding-top: 1.4rem;
+    // @include from992_ {
+    width: 25rem;
+    // }
+    box-sizing: border-box;
+    &-icon {
+      min-width: 65%;
+      border-radius: 0.4rem;
+      align-items: center;
+      display: flex;
+      height: 100%;
+      &--active {
+        max-width: 4rem;
+        height: 4rem;
+        font-size: 1.8rem;
+        line-height: 4rem;
+        min-width: 4.2rem;
+        border-radius: 4px;
+        margin-left: 1.8rem;
+        margin-right: 1.8rem;
+        background-color: $appBase;
+      }
+      &-image {
+        margin-left: 0.7rem;
+        margin-right: 1.2rem;
+        align-self: center;
+        height: 2.8rem;
+        width: 2.8rem;
+      }
+    }
+  }
+
+  &__header {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &-label {
+      color: #ffffff;
+      margin-left: 5rem;
+      font-size: 3.6rem;
+      text-transform: capitalize;
+      user-select: none;
+    }
+    .ant-badge {
+      margin: 1.5rem;
+      margin-right: 3rem;
+      .anticon-message {
+        height: 4rem;
+        font-size: 2.5rem;
+        color: #ffffff;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .custom-delete-confirm {
+    .ant-modal-content {
+      padding: 6rem 8rem 5rem;
+      width: 58rem;
+      height: 55rem;
+      .ant-modal-body {
+        padding: 0;
+        .ant-modal-confirm-content {
+          > div {
+            height: 32rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            > h1 {
+              font-size: 3.6rem;
+              color: #171725;
+              font-weight: bold;
+            }
+            > p {
+              color: #272b2f;
+              font-size: 2rem;
+              text-align: center;
+            }
+          }
+        }
+        .ant-modal-confirm-btns {
+          display: flex;
+          width: 100%;
+          justify-content: space-between;
+          > button {
+            background-color: transparent;
+            box-shadow: none;
+            width: 50%;
+            padding: 1rem;
+            height: 4.8rem;
+            border-radius: 6px;
+            border: none;
+            &:first-child {
+              border: 1px solid #171725;
+              background-color: #ffffff;
+            }
+            &:last-child {
+              background-color: #dc4d4d;
+            }
+            > span {
+              font-size: 1.8rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  .ant-layout + div {
+    z-index: 10001;
+  }
+}
+
+/* auth */
+@import "../../app/components/Auth/Auth.scss";
+
+/* common */
+@import "../../app/components/NotFound/NotFound.scss";
+@import "../../app/components/CustomButton/CustomButton.scss";
+@import "../../app/components/FloatingButton/FloatingButton.scss";
+@import "../../app/components/CustomListCard/CustomItemCard.scss";
+
+/* module*/
+@import "../../app/modules/customer/Customer.scss";

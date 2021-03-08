@@ -1,0 +1,42 @@
+.ant-btn-primary {
+  height: 4rem;
+  border-radius: 5px;
+  background-color: #142534;
+  border: none;
+  color: #ffffff;
+  > span {
+    color: #ffffff;
+  }
+}
+
+button.button-base-light {
+  background-color: $appBaseLight;
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $appBaseLight;
+  }
+}
+button.button-white {
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  > span {
+    color: #5e6266;
+  }
+  &:hover,
+  &:active {
+    background-color: unset;
+    border-color: #000000;
+  }
+}
+
+button.ant-btn-primary[disabled],
+.ant-btn-primary[disabled]:hover,
+.ant-btn-primary[disabled]:focus,
+.ant-btn-primary[disabled]:active {
+  background-color: #c3c7cc;
+}
+
+.ant-btn:hover {
+  color: unset;
+}

@@ -1,0 +1,46 @@
+/* 
+    - floating-btn (block)
+    - floating-btn__plus (element)
+    - floating-btn__sales (element)
+    - floating-btn__appt (element)
+    - floating-btn__blocked (element)
+    - floating-btn__lable (element)
+   */
+
+/* floating button ++ */
+
+.floating-btn {
+    width: 9.6rem;
+    position: fixed;
+    bottom: 2rem;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 250ms ease 0ms;
+    &__icon {
+      width: 2.6rem;
+      height: 2.6rem;
+    }
+    &__label {
+      font-size: $baseFontSize;
+    }
+    &__blocked {
+      right: 39rem;
+    }
+    &__sales {
+      right: 27rem;
+    }
+  
+    &__appt {
+      right: 15rem;
+    }
+  
+    &__plus {
+      right: 4rem;
+    }
+  }
+  
+  /* floating button -- */
+  
