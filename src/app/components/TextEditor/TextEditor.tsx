@@ -78,8 +78,7 @@ export const TextEditor: React.FC<TextEditorModule.Props> = (props) => {
         <CustomButton
           onClick={() => props.onCancel()}
           style={{ color: "#444C53", fontWeight: "bold" }}
-          type="completed"
-          outline
+          type="secondary"
           item="Cancel"
         />
         <CustomButton
@@ -88,7 +87,7 @@ export const TextEditor: React.FC<TextEditorModule.Props> = (props) => {
             props.onSubmit(editorHtml);
           }}
           style={{ fontWeight: "bold" }}
-          type="new"
+          type="primary"
           item={<span>Save</span>}
         />
       </div>

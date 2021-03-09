@@ -1,11 +1,11 @@
 //custom Date picker Style
 .ant-picker.custom_range_picker {
   border: none;
-  box-shadow: $boxShadowButton;
   border-radius: 4px;
   padding-left: 4rem;
   padding-right: 2.5rem;
   height: 4rem;
+  width: 100%;
   .ant-picker-suffix {
     position: absolute;
     top: 25%;

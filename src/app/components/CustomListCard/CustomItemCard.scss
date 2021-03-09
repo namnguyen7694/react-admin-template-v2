@@ -1,6 +1,7 @@
 .custom-item-card {
-  border-radius: 3px;
   margin-bottom: 0;
+  border-left: none;
+  border-right: none;
   &:hover {
     box-shadow: $boxShadowCard;
     cursor: pointer;
@@ -10,7 +11,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 2.4rem;
+    padding: 0 1rem;
     width: 100%;
     height: 6rem;
     .ant-card-meta-avatar {
@@ -44,7 +45,7 @@
       object-fit: cover;
     }
     .ant-card-meta-title {
-      color: #2d3742;
+      color: $appBaseDark;
       font-size: 1.6rem;
     }
     .ant-card-meta-description {
@@ -72,7 +73,7 @@
     .ant-card-meta-title {
       font-size: 1.4rem;
       line-height: 156%;
-      color: #7d8596;
+      color: $appBaseDark;
       font-weight: normal;
     }
     &.customer-card-status {
@@ -224,30 +225,12 @@
         text-transform: capitalize;
       }
     }
-    &.button-base-light {
+    &.button-base-dark {
       align-items: center;
+      height: 4rem;
       span {
         width: 100%;
       }
-    }
-  }
-}
-
-.custom-list-heading {
-  display: flex;
-  height: 6.4rem;
-  background-color: $appBaseLight;
-  align-items: center;
-  padding: 2.4rem;
-  border-radius: 6px 6px 0 0;
-  > div {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    > div {
-      color: #ffffff;
-      font-size: 1.8rem;
-      width: 10%;
     }
   }
 }

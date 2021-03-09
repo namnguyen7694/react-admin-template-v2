@@ -3,11 +3,11 @@ import CustomButton from "../CustomButton/CustomButton";
 interface Props {
   handleToggleButton?: any;
   visibleGroupButton?: boolean;
-  buttonRender: Array<{ type: any; title: string; image?: string, buttonAction? : () =>void }>;
+  buttonRender: Array<{ type: any; title: string; image?: string; buttonAction?: () => void }>;
 }
 
-const FloatingButton: React.FC<Props> = props => {
-  const {visibleGroupButton} = props
+const FloatingButton: React.FC<Props> = (props) => {
+  const { visibleGroupButton } = props;
   const { buttonRender } = props;
   return (
     <>
@@ -15,13 +15,14 @@ const FloatingButton: React.FC<Props> = props => {
         <div
           key={index}
           style={{ display: `${visibleGroupButton ? "flex" : "none"}`, right: 40 + 90 * (index + 1) }}
-          className="floating-btn floating-btn__blocked">
+          className="floating-btn floating-btn__blocked"
+        >
           <CustomButton
             type={btn.type}
             shape={"circle"}
             shadow={true}
-            onClick={event => {
-              btn.buttonAction && btn.buttonAction() ;
+            onClick={(event) => {
+              btn.buttonAction && btn.buttonAction();
             }}
             item={<img src={btn.image} className="floating-btn__icon" alt="lock-act-icon" />}
             style={{ marginBottom: 8, width: 64, height: 64 }}
@@ -31,10 +32,10 @@ const FloatingButton: React.FC<Props> = props => {
       ))}
       <div className="floating-btn floating-btn__plus">
         <CustomButton
-          type={visibleGroupButton ? "primary" : "new"}
+          type={visibleGroupButton ? "primary" : "secondary"}
           shape={"circle"}
           shadow={true}
-          onClick={event => {
+          onClick={(event) => {
             props.handleToggleButton && props.handleToggleButton();
           }}
           item={

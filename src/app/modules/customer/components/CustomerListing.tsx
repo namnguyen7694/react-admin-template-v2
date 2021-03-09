@@ -1,11 +1,15 @@
-import { Input, Menu, Pagination } from "antd";
+import { Divider, Input } from "antd";
 import React, { Component } from "react";
 import _ from "lodash";
 import CustomerCard from "app/components/CustomListCard/CustomerCard";
 import { CustomerListReducerType } from "app/store/customer/customerTypes";
-import NullListing from "app/components/EmptyListing/NullListing";
+import NullListing from "app/components/CustomListing/NullListing";
 import { commonRequestFilter } from "models/requets.model";
 import CustomRangePicker from "app/components/RangePicker/RangePicker";
+import icon_filter from "assets/images/icon/ic_filter.svg";
+import ListHeading from "app/components/CustomListing/ListHeading";
+import ListPagination from "app/components/CustomListing/ListPagination";
+import CustomButton from "app/components/CustomButton/CustomButton";
 
 export interface Props {
   customerList: CustomerListReducerType;
@@ -84,18 +88,6 @@ class CustomerListing extends Component<Props, State> {
     });
   };
 
-  renderOptions = () => (
-    <Menu>
-      <Menu.Item key="1">Active</Menu.Item>
-      <Menu.Divider />
-      <Menu.Item key="2">Inactive</Menu.Item>
-      <Menu.Divider />
-      <Menu.Item key="3">Create new</Menu.Item>
-      <Menu.Divider />
-      <Menu.Item key="4">Delete</Menu.Item>
-    </Menu>
-  );
-
   componentDidMount() {
     this.loadListing();
   }
@@ -103,85 +95,84 @@ class CustomerListing extends Component<Props, State> {
   render() {
     const customerList = this.props.customerList.listing.data;
     return (
-      <div className="customer-list">
-        <div className="customer-list__toolbar">
-          <div className="customer-list__toolbar-control">
-            <CustomRangePicker
-              startDate={this.state.start_date}
-              endDate={this.state.end_date}
-              handleChangeDateRange={this.handleChangeDateRange}
-              title="Date create:"
+      <div className="listing">
+        <div className="listing-toolbar">
+          <h2>Customer list</h2>
+          <div className="listing-toolbar__filter">
+            <img src={icon_filter} alt="filter" />
+            <h3>Filter Setting</h3>
+            <CustomButton
+              onClick={() => this.setState({ page_number: 1 }, () => this.loadListing())}
+              item="Apply filter"
+              type="secondary"
+              size="medium"
+              style={{ width: "100%" }}
             />
-            <Input
-              placeholder="Search by name, email"
-              allowClear
-              defaultValue={this.state.keyword!}
-              onChange={(event) => {
-                let key = event.target.value;
-                if (key.trim() !== "") {
-                  this.debounceSearch(key);
-                } else {
-                  this.debounceSearch(undefined);
-                }
-              }}
-            />
-          </div>
-          {customerList.length > 0 && (
-            <div className="customer-list__toolbar-options">
-              {/* <Dropdown getPopupContainer={(node) => node} overlay={this.renderOptions} trigger={["click"]}>
-                <div onClick={(e) => e.preventDefault()}>
-                  Option <span style={{ fontSize: "8px", marginLeft: "1rem" }}>▼</span>{" "}
-                </div>
-              </Dropdown> */}
-              <div></div>
-              <Pagination
-                showSizeChanger
-                onShowSizeChange={this.onShowSizeChange}
-                onChange={(page_number) => this.setState({ page_number }, () => this.loadListing())}
-                defaultCurrent={this.props.customerList.listing.page_number}
-                total={this.props.customerList.listing.total}
-                defaultPageSize={this.props.customerList.listing.page_size}
+
+            <Divider />
+            <div style={{ marginTop: "4rem" }}>
+              <CustomRangePicker
+                startDate={this.state.start_date}
+                endDate={this.state.end_date}
+                handleChangeDateRange={this.handleChangeDateRange}
+                title="Date create:"
               />
             </div>
-          )}
+            <Divider />
+          </div>
         </div>
-        {customerList.length > 0 && (
-          <div className="custom-list-heading">
-            {/* <Checkbox
-              onChange={(e) => {
-                if (e.target.checked === true) {
-                  this.setState({ selectingItem: customerList.map((elm) => elm.id.toString()) });
-                } else {
-                  this.setState({ selectingItem: [] });
-                }
-              }}
-              style={{ width: "5rem" }}
-              indeterminate={
-                this.state.selectingItem.length > 0 && this.state.selectingItem.length !== customerList.length
-              }
-              checked={this.state.selectingItem.length === customerList.length}
-            /> */}
-            <div>
-              <div style={{ width: "30rem" }}>Identity</div>
-              <div style={{ textAlign: "center" }}>KYC Verified</div>
-              <div style={{ textAlign: "center" }}>Status</div>
-              <div>Date create</div>
-            </div>
-          </div>
-        )}
-        {customerList.length > 0 && (
-          <div className="customer-list__list">
-            {customerList?.map((ctm, index) => (
-              <CustomerCard
-                key={index}
-                data={ctm}
-                handleSelectItem={this.handleSelectItem}
-                defaulSelect={this.state.selectingItem.includes(ctm.id.toString())}
+
+        <div className="listing-main">
+          <ListPagination
+            pageNumber={this.state.page_number}
+            total={this.props.customerList.listing.total}
+            pageSize={this.state.page_size}
+            onShowSizeChange={this.onShowSizeChange}
+            handleChangePage={(page_number) => this.setState({ page_number }, () => this.loadListing())}
+            length={this.props.customerList.listing.data.length}
+          />
+          <div className="listing-main__container">
+            <div className="d_flex sp_bw">
+              <Input
+                placeholder="Search by name, email"
+                allowClear
+                defaultValue={this.state.keyword!}
+                onChange={(event) => {
+                  let key = event.target.value;
+                  if (key.trim() !== "") {
+                    this.debounceSearch(key);
+                  } else {
+                    this.debounceSearch(undefined);
+                  }
+                }}
               />
-            ))}
+              {/* <CustomButton item={"+ Create"} type="primary" size="small" style={{ width: "16rem" }} /> */}
+            </div>
+            <ListHeading
+              column={[
+                { name: "Identity", width: "30rem" },
+                { name: "KYC Verified" },
+                { name: "Status", align: "center" },
+                { name: "Date create" },
+              ]}
+              useCheckAll={false}
+            />
+
+            {customerList.length > 0 && (
+              <div className="listing-main__container--listing">
+                {customerList?.map((ctm, index) => (
+                  <CustomerCard
+                    key={index}
+                    data={ctm}
+                    handleSelectItem={this.handleSelectItem}
+                    defaulSelect={this.state.selectingItem.includes(ctm.id.toString())}
+                  />
+                ))}
+              </div>
+            )}
+            {customerList.length === 0 && !this.props.customerList.loading && <NullListing type="customer" />}
           </div>
-        )}
-        {customerList.length === 0 && !this.props.customerList.loading && <NullListing type="customer-list" />}
+        </div>
       </div>
     );
   }
