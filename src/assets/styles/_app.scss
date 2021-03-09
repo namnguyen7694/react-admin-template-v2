@@ -13,72 +13,54 @@
       transition: color 0.3s;
       height: 5rem;
     }
-    &-logo {
+    &--logo {
       display: flex;
-      align-items: flex-end;
-      flex-direction: column;
-      height: 20rem;
-      background-color: #465156;
-      width: 25rem;
-      transition: all 0.2s;
-      .anticon svg {
-        height: 3rem;
-        width: 2rem;
+      align-items: center;
+      justify-content: center;
+      height: 4rem;
+      margin: 1rem;
+      img {
+        height: 100%;
       }
+      span {
+        color: $appBase;
+        font-weight: 600;
+        font-size: 2rem;
+        margin-left: 1.6rem;
+      }
+    }
+    &--user {
+      background-color: $grayBase;
+      width: 95%;
+      height: 7.2rem;
+      margin: auto;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       .ant-card-meta {
-        flex-direction: column;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        &-avatar {
-          padding-right: 0;
-          .ant-avatar {
-            height: 6rem;
-            width: 6rem;
-          }
+        padding: 1rem;
+        .ant-avatar {
+          height: 4rem;
+          width: 4rem;
         }
-        .ant-card-meta-description,
         .ant-card-meta-title {
-          color: #f4f5f7;
-          text-align: center;
-          font-size: 1.6rem;
+          margin-bottom: 0;
         }
+        .ant-card-meta-description {
+          font-size: 1.2rem;
+        }
+      }
+      &--trigger {
+        cursor: pointer;
+        margin-right: 1rem;
       }
     }
   }
 
   &__menu {
-    padding-top: 1.4rem;
-    // @include from992_ {
-    width: 25rem;
-    // }
+    width: 32rem;
     box-sizing: border-box;
-    &-icon {
-      min-width: 65%;
-      border-radius: 0.4rem;
-      align-items: center;
-      display: flex;
-      height: 100%;
-      &--active {
-        max-width: 4rem;
-        height: 4rem;
-        font-size: 1.8rem;
-        line-height: 4rem;
-        min-width: 4.2rem;
-        border-radius: 4px;
-        margin-left: 1.8rem;
-        margin-right: 1.8rem;
-        background-color: $appBase;
-      }
-      &-image {
-        margin-left: 0.7rem;
-        margin-right: 1.2rem;
-        align-self: center;
-        height: 2.8rem;
-        width: 2.8rem;
-      }
-    }
   }
 
   &__header {
@@ -88,19 +70,20 @@
     justify-content: space-between;
     align-items: center;
     &-label {
-      color: #ffffff;
-      margin-left: 5rem;
-      font-size: 3.6rem;
+      color: $appBaseDark;
+      margin-left: 2rem;
+      font-size: 3rem;
       text-transform: capitalize;
       user-select: none;
+      font-weight: 600;
     }
     .ant-badge {
       margin: 1.5rem;
       margin-right: 3rem;
       .anticon-message {
-        height: 4rem;
+        height: 3rem;
         font-size: 2.5rem;
-        color: #ffffff;
+        color: $appBaseDark;
         cursor: pointer;
       }
     }

@@ -1,7 +1,7 @@
 import React, { Suspense, lazy } from "react";
 import { Switch, Route, NavLink, Redirect } from "react-router-dom";
-import { Card, Layout, Menu } from "antd";
-import { MenuOutlined, LogoutOutlined, UserOutlined } from "@ant-design/icons";
+import { Card, Dropdown, Layout, Menu } from "antd";
+import { UserOutlined } from "@ant-design/icons";
 import Avatar from "antd/lib/avatar/avatar";
 import _ from "lodash";
 import * as config from "constants/config.constant";
@@ -14,6 +14,7 @@ import { RootState } from "./store/config/rootReducer";
 import { bindActionCreators, Dispatch } from "redux";
 import * as CONSTANTS from "constants/index";
 import tokenUtil from "utils/token.util";
+import icon_logo from "assets/images/icon/ic_robot.svg";
 
 const { Header, Content, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -128,17 +129,18 @@ class AppLayout extends React.Component<MergeProps, AppLayoutModule.State> {
     return auth;
   };
 
+  userPopoverAction = () => (
+    <Menu>
+      <Menu.Item key={undefined} onClick={() => this.props.actions.logoutAction()}>
+        <div className="filter-item">Log out</div>
+      </Menu.Item>
+    </Menu>
+  );
+
   render() {
     const activeMenu = Object.values(ROUTES).find(
       (route) => this.props.history.location.pathname.indexOf(route.path.BASE) > -1
     );
-
-    const subActiveMenu =
-      activeMenu && activeMenu.subMenu
-        ? Object.values(activeMenu.subMenu).find(
-            (sub) => this.props.history.location.pathname.indexOf(sub.path.BASE) > -1
-          )
-        : undefined;
 
     const user = this.props.auth.data.user;
 
@@ -148,41 +150,17 @@ class AppLayout extends React.Component<MergeProps, AppLayoutModule.State> {
           this.state.appView ? (
             <Layout className="layout" id="layout">
               <Sider
-                width={"25rem"}
+                width={"32rem"}
                 collapsible
                 collapsed={this.state.collapsed}
                 collapsedWidth={"6.4rem"}
                 className="layout__sider"
                 trigger={null}
               >
-                {this.state.collapsed ? (
-                  <div className="layout__sider-logo" style={{ alignItems: "center" }}>
-                    <MenuOutlined className="layout__sider-trigger" onClick={this.toggleCollapsed} />
-                    <Avatar
-                      icon={<UserOutlined />}
-                      src={this.props.auth.data.user?.profile.avatar_url!}
-                      style={{ width: "5rem", height: "5rem", marginTop: "3rem" }}
-                    />
-                  </div>
-                ) : (
-                  <div className="layout__sider-logo">
-                    <div
-                      style={{ display: "flex", justifyContent: "space-between", width: "100%", alignItems: "center" }}
-                    >
-                      <MenuOutlined className="layout__sider-trigger" onClick={this.toggleCollapsed} />
-                      <LogoutOutlined
-                        style={{ color: "#fff", cursor: "pointer", marginRight: "1rem" }}
-                        onClick={() => this.props.actions.logoutAction()}
-                      />
-                    </div>
-                    <Card.Meta
-                      avatar={<Avatar icon={<UserOutlined />} src={this.getAdminInfo().profile} />}
-                      title={this.getAdminInfo().name}
-                      description={user?.email}
-                    />
-                  </div>
-                )}
-
+                <div className="layout__sider--logo">
+                  <img src={icon_logo} alt="logo" />
+                  <span>Local HUB</span>
+                </div>
                 <Menu
                   defaultSelectedKeys={this.getDefaultSelectedKeys().key}
                   defaultOpenKeys={this.getDefaultSelectedKeys().open}
@@ -255,15 +233,24 @@ class AppLayout extends React.Component<MergeProps, AppLayoutModule.State> {
                         )
                   )}
                 </Menu>
+                <div className="layout__sider--user">
+                  <Card.Meta
+                    avatar={<Avatar icon={<UserOutlined />} src={this.getAdminInfo().profile} />}
+                    title={this.getAdminInfo().name}
+                    description={user?.email}
+                  />
+                  <Dropdown getPopupContainer={(node) => node} overlay={this.userPopoverAction} trigger={["click"]}>
+                    <div className="layout__sider--user--trigger" onClick={(e) => e.preventDefault()}>
+                      <span style={{ fontSize: "8px", marginLeft: "1rem" }}>▼</span>{" "}
+                    </div>
+                  </Dropdown>
+                </div>
               </Sider>
 
               <Layout>
                 <Header>
                   <div className="layout__header">
-                    <span className="layout__header-label">
-                      {activeMenu ? activeMenu.title : ""}
-                      {subActiveMenu ? `/${subActiveMenu.title}` : ""}
-                    </span>
+                    <span className="layout__header-label">{activeMenu ? activeMenu.title : ""}</span>
                   </div>
                 </Header>
 
