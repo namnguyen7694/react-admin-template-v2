@@ -119,6 +119,14 @@
     }
   }
 }
+
+.ant-picker-cell-in-view.ant-picker-cell-range-hover-end,
+.ant-picker-cell-in-view.ant-picker-cell-range-hover-start {
+  &::before {
+    background-color: #f0f3f8 !important;
+  }
+}
+
 .ant-picker-cell-in-view.ant-picker-cell-selected,
 .ant-picker-cell-in-view.ant-picker-cell-range-start,
 .ant-picker-cell-in-view.ant-picker-cell-range-end {
